@@ -11,10 +11,12 @@ const Nav = ({ theme, toggleTheme, setPage }) => {
   return (
     <nav className="nav">
       <div className="nav-container">
-        {/* Mobile Menu Button (Hamburger) */}
-        <button className="mobile-menu-button" onClick={toggleMobileMenu}>
-          &#9776; {/* Unicode for hamburger icon */}
-        </button>
+        <div className="nav-left">
+          {/* Mobile Menu Button (Hamburger) */}
+          <button className="mobile-menu-button" onClick={toggleMobileMenu}>
+            &#9776; {/* Unicode for hamburger icon */}
+          </button>
+        </div>
         <div className="nav-logo">
           <img 
             src="/static/tbelogo.png" 
