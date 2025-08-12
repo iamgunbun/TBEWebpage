@@ -56,41 +56,16 @@ body {
 
 .nav-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   max-width: 72rem;
   margin: auto;
-  gap: 1rem;
-}
-
-/* New CSS for centered nav on larger screens */
-@media (min-width: 768px) {
-  .nav-container {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .nav-left {
-    /* For spacing, can be used for other elements later */
-  }
-
-  .nav-right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1.5rem;
-  }
+  position: relative;
 }
 
 .nav-logo {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--accent-color);
-  text-transform: uppercase;
-  text-align: center; /* Ensures logo is centered in its grid column */
+  flex-grow: 1;
+  text-align: center;
 }
 
 .nav-logo-image {
@@ -98,18 +73,31 @@ body {
   width: auto;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 1.5rem;
+.nav-right {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background-color: var(--nav-bg);
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 49;
 }
 
-@media (min-width: 768px) {
-  .nav-links {
-    /* Resets for larger screens if needed */
-  }
+.nav-right.open {
+  display: flex;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .nav-link-item {
@@ -131,6 +119,61 @@ body {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  align-self: flex-end;
+}
+
+/* Mobile-specific button for nav menu */
+.mobile-menu-button {
+  display: block;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .mobile-menu-button {
+    display: none;
+  }
+
+  .nav-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .nav-left {
+    display: block; /* Placeholder to push logo to center */
+  }
+
+  .nav-logo {
+    text-align: center;
+  }
+
+  .nav-right {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    margin: 0;
+    gap: 1.5rem;
+  }
+
+  .theme-toggle-button {
+    align-self: auto;
+  }
 }
 
 /* === Header Component with Video === */
@@ -385,55 +428,6 @@ body {
 
 /* === Merch Page Component === */
 .merch-page-section {
-  padding: 5rem 1rem;
-}
-
-.merch-category {
-  margin-bottom: 3rem;
-}
-
-.category-title {
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  color: var(--accent-color);
-}
-
-
-/* === Footer Component === */
-.footer {
-  padding: 3rem;
-  background-color: var(--card-background-color);
-  text-align: center;
-}
-
-.social-links-container {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.social-link-item {
-  color: var(--secondary-text-color);
-  transition-property: color;
-  transition-duration: 300ms;
-}
-
-.social-link-item:hover {
-  color: var(--accent-color);
-}
-
-.footer-text {
-  font-size: 0.875rem;
-  color: var(--secondary-text-color);
-}
-
-/* === All Merch Page Component === */
-
-.all-merch-section {
   padding: 5rem 1rem;
 }
 
