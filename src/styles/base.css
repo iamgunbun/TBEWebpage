@@ -94,7 +94,6 @@ body {
   cursor: pointer;
 }
 
-/* Mobile-specific nav menu styling */
 .mobile-menu-button {
   display: block;
   font-size: 2rem;
@@ -122,31 +121,6 @@ body {
   display: flex;
 }
 
-/* Desktop Styles */
-@media (min-width: 768px) {
-  .mobile-menu-button {
-    display: none;
-  }
-  
-  .nav-right {
-    display: flex;
-    flex-direction: row;
-    position: static;
-    background: none;
-    padding: 0;
-    box-shadow: none;
-    justify-self: end;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .nav-links {
-    flex-direction: row;
-    margin: 0;
-    gap: 1.5rem;
-  }
-}
-
 .nav-logo {
   text-align: center;
 }
@@ -154,6 +128,13 @@ body {
 .nav-logo-image {
   height: 50px;
   width: auto;
+}
+
+@media (min-width: 768px) {
+  /* Keep mobile styles but apply flex-end to nav-right for desktop layout */
+  .nav-right {
+    justify-self: end;
+  }
 }
 
 
