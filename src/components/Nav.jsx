@@ -29,9 +29,11 @@ const Nav = ({ theme, toggleTheme, setPage }) => {
             {siteData.navItems.map((item, index) => (
               <li key={index}>
                 <a 
-                  href="#" 
+                  href={item.href || '#'} 
                   onClick={() => {
-                    setPage(item.page);
+                    if (item.page) {
+                      setPage(item.page);
+                    }
                     setIsMobileMenuOpen(false);
                   }}
                   className="nav-link-item"
