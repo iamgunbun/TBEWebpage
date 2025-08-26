@@ -60,7 +60,13 @@ const AllMerch = () => {
               const totalImages = item.image.length;
 
               return (
-                <div key={index} className="merch-item-full">
+                <a 
+                  key={index} 
+                  href={item.storeUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="merch-item-full"
+                >
                   <div className="merch-image-container">
                     <img 
                       src={item.image[currentImageIndex]} 
@@ -71,13 +77,19 @@ const AllMerch = () => {
                       <>
                         <button 
                           className="merch-nav-button left" 
-                          onClick={() => handlePrevImage(index)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handlePrevImage(index);
+                          }}
                         >
                           &#10094;
                         </button>
                         <button 
                           className="merch-nav-button right" 
-                          onClick={() => handleNextImage(index)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleNextImage(index);
+                          }}
                         >
                           &#10095;
                         </button>
@@ -91,7 +103,7 @@ const AllMerch = () => {
                   <button className="merch-add-to-cart-full">
                     Add to Cart
                   </button>
-                </div>
+                </a>
               );
             })
           ) : (
