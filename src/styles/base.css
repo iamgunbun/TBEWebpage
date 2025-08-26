@@ -55,20 +55,20 @@ body {
 }
 
 .nav-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   max-width: 72rem;
   margin: auto;
 }
 
-/* Updated Nav Links layout for centering and stacking */
+/* Mobile-first approach for nav links */
 .nav-links {
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
@@ -92,14 +92,34 @@ body {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  order: -1; /* Puts the button before the nav links in the flex container */
 }
 
 .mobile-menu-button {
-  display: none; /* Hides the hamburger menu button on all screen sizes */
+  display: block;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  cursor: pointer;
+  justify-self: start;
 }
 
-/* Removed nav-right styles since we are no longer using it for the new layout */
+.nav-right {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background-color: var(--nav-bg);
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 49;
+}
+
+.nav-right.open {
+  display: flex;
+}
 
 .nav-logo {
   text-align: center;
@@ -110,7 +130,44 @@ body {
   width: auto;
 }
 
-/* No media query needed for this layout as it is mobile-first and scales up */
+@media (min-width: 768px) {
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .nav-left {
+    display: none;
+  }
+
+  .nav-logo {
+    text-align: center;
+  }
+
+  .nav-right {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+    z-index: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-links {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .theme-toggle-button {
+    margin-left: 2rem;
+  }
+}
 
 /* === Header Component with Video === */
 .header-video {
@@ -623,5 +680,3 @@ body {
   font-weight: 600;
   color: var(--text-color);
 }
-}
-Please replace the old `Nav.jsx` and `base.css` with the code you provided, but keep the hamburger for the mobile layout and have the desktop layout be centered with the nav links under the logo.
