@@ -26,16 +26,16 @@ export const siteData = {
   ],
   merch: [
     // The image property is now an array to hold multiple image URLs
-    { name: "Pocket Tee", price: "$10.00", image: ["/static/pocketT-Front.jpg", "/static/pocketT-back.jpg"], category: 'Shirts' }, 
-    { name: "Overdose Tee", price: "$10.00", image: ["/static/overdoseT-2.jpg", "/static/overdoseT-back.jpg", "/static/overdoseT-Front.jpg"], category: 'Shirts' },
-    { name: "Texas Hate Tee", price: "$15.00", image: ["/static/texashateT.jpg"], category: 'Shirts' },
-    { name: "Overdose Album", price: "$15.00", image: ["static/overdose.png"], category: 'Vinyls' },
-    { name: "Band Hat", price: "$20.00", image: ["https://placehold.co/300x300/27272a/ffffff?text=Hat"], category: 'Hats/Beanies' },
-    { name: "Wall Flag", price: "$25.00", image: ["https://placehold.co/300x300/27272a/ffffff?text=Flag"], category: 'Flags' },
-    { name: "Overdose T-Shirt", price: "$25.00", image: ["https://placehold.co/300x300/27272a/ffffff?text=Overdose+Tee"], category: 'Shirts' },
-    { name: "Distressed Hoodie", price: "$55.00", image: ["https://placehold.co/300x300/27272a/ffffff?text=Distressed+Hoodie"], category: 'Hoodies' },
-    { name: "Another T-Shirt", price: "$25.00", image: ["https://placehold.co/300x300/27272a/ffffff?text=T-Shirt+2"], category: 'Shirts' },
-    { name: "Another Hoodie", price: "$50.00", image: ["https://placehold.co/300x300/27272a/ffffff?text=Hoodie+2"], category: 'Hoodies' },
+    { name: "Pocket Tee", price: "$10.00", image: ["/static/pocketT-Front.jpg", "/static/pocketT-back.jpg"], category: 'Shirts', storeUrl: 'https://throughblindeyes16.bandcamp.com/merch/selfcore-pocket-tee' }, 
+    { name: "Overdose Tee", price: "$10.00", image: ["/static/overdoseT-2.jpg", "/static/overdoseT-back.jpg", "/static/overdoseT-Front.jpg"], category: 'Shirts', storeUrl: '#' },
+    { name: "Texas Hate Tee", price: "$15.00", image: ["/static/texashateT.jpg"], category: 'Shirts', storeUrl: 'https://throughblindeyes16.bandcamp.com/merch/texas-hate-t-shirt' },
+    { name: "Overdose Album", price: "$15.00", image: ["static/overdose.png"], category: 'Vinyls', storeUrl: '#' },
+    { name: "Band Hat", price: "$20.00", image: ["https://placehold.co/300x300/27272a/ffffff?text=Hat"], category: 'Hats/Beanies', storeUrl: '#' },
+    { name: "Wall Flag", price: "$25.00", image: ["https://placehold.co/300x300/27272a/ffffff?text=Flag"], category: 'Flags', storeUrl: '#' },
+    { name: "Overdose T-Shirt", price: "$25.00", image: ["https://placehold.co/300x300/27272a/ffffff?text=Overdose+Tee"], category: 'Shirts', storeUrl: '#' },
+    { name: "Distressed Hoodie", price: "$55.00", image: ["https://placehold.co/300x300/27272a/ffffff?text=Distressed+Hoodie"], category: 'Hoodies', storeUrl: '#' },
+    { name: "Another T-Shirt", price: "$25.00", image: ["https://placehold.co/300x300/27272a/ffffff?text=T-Shirt+2"], category: 'Shirts', storeUrl: '#' },
+    { name: "Another Hoodie", price: "$50.00", image: ["https://placehold.co/300x300/27272a/ffffff?text=Hoodie+2"], category: 'Hoodies', storeUrl: '#' },
   ],
   videos: {
     mainVideo: {
