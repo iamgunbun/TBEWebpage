@@ -133,9 +133,10 @@ body {
 @media (min-width: 768px) {
   .nav-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
   }
   
   .nav-left {
@@ -143,7 +144,7 @@ body {
   }
 
   .nav-logo {
-    text-align: center;
+    order: 0;
   }
 
   .nav-right {
@@ -155,6 +156,7 @@ body {
     padding: 0;
     box-shadow: none;
     z-index: auto;
+    flex-grow: 1;
     justify-content: center;
     align-items: center;
   }
@@ -165,7 +167,8 @@ body {
   }
 
   .theme-toggle-button {
-    margin-left: 2rem;
+    order: 1;
+    margin-left: auto;
   }
 }
 
