@@ -8,6 +8,7 @@ import Videos from './components/Videos';
 import Footer from './components/Footer';
 
 import './styles/base.css';
+import { siteData } from './data/siteData';
 
 export default function App() {
   const [theme, setTheme] = useState('dark');
@@ -20,6 +21,14 @@ export default function App() {
   useEffect(() => {
     document.documentElement.className = theme;
   }, [theme]);
+
+  // Use useEffect to set the page title dynamically
+  useEffect(() => {
+    const pageItem = siteData.navItems.find(item => item.page === page);
+    const pageTitle = pageItem ? pageItem.name : 'Home';
+    document.title = `${pageTitle} | ${siteData.bandName}`;
+  }, [page]); // This effect runs whenever the 'page' state changes
+
 
   // Renders the correct component based on the current page state
   const renderPage = () => {
@@ -53,4 +62,5 @@ export default function App() {
       </div>
     </div>
   );
+  
 }
