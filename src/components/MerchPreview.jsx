@@ -9,8 +9,11 @@ const MerchPreview = () => {
       <h2 className="section-title">Merchandise</h2>
       <div className="merch-grid">
         {previewItems.map((item, index) => (
-          <div 
+          <a 
             key={index} 
+            href={item.storeUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
             className="merch-item"
           >
             <img 
@@ -23,7 +26,7 @@ const MerchPreview = () => {
             <button className="merch-add-to-cart">
               Add to Cart
             </button>
-          </div>
+          </a>
         ))}
       </div>
     </section>
